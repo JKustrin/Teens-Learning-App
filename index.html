@@ -234,12 +234,42 @@
       .caution p { font-size: 0.96rem; line-height: 1.38; }
       .lesson .block p { font-size: 0.98rem; }
     }
+    /* Title page */
+    body.on-intro header.masthead { display: none; }
+    body.on-intro main.card { border-top: 3px solid var(--ink); }
+    .title-page { display: flex; flex-direction: column; min-height: calc(100vh - 3.3rem); }
+    .tp-head { text-align: center; padding: 0.9rem 0 0.7rem; margin: auto 0 0.4rem; border-bottom: 3px double var(--ink); }
+    .tp-kicker { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.05rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.15rem; }
+    .tp-years { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: 0.08em; margin: 0 0 0.6rem; }
+    .title-page h1 { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 3.3rem; line-height: 0.98; letter-spacing: 0.01em; margin: 0 0 0.7rem; }
+    .title-page h1, .tp-kicker { text-wrap: balance; }
+    .tp-sub { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; margin: 0; }
+    .tp-ins { font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.6rem 0 0.4rem; }
+    ol.tp-steps { list-style: none; margin: 0 0 0.75rem; padding: 0; }
+    ol.tp-steps li { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.36rem 0; border-top: 1px solid var(--ink); font-size: 0.98rem; line-height: 1.38; }
+    ol.tp-steps li:last-child { border-bottom: 1px solid var(--ink); }
+    ol.tp-steps .n { flex: none; width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--paper); font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 700; font-size: 1.05rem; margin-top: 0.1rem; }
+    .tp-start { font-size: 1.6rem !important; min-height: 3.6rem; margin-bottom: auto; }
+    .title-page .secondary { margin-bottom: auto; }
+    @media (max-width: 30rem) {
+      .title-page { min-height: calc(100vh - 2.9rem); }
+      .tp-head { padding: 0.6rem 0 0.6rem; }
+      .tp-kicker { font-size: 0.9rem; letter-spacing: 0.04em; }
+      .tp-years { font-size: 1.15rem; margin-bottom: 0.45rem; }
+      .title-page h1 { font-size: 2.35rem; margin-bottom: 0.4rem; }
+      .tp-sub { font-size: 0.95rem; }
+      .tp-ins { font-size: 1.05rem; margin: 0.45rem 0 0.25rem; }
+      ol.tp-steps { margin-bottom: 0.6rem; }
+      ol.tp-steps li { font-size: 0.9rem; line-height: 1.33; padding: 0.32rem 0; gap: 0.55rem; }
+      ol.tp-steps .n { width: 1.5rem; height: 1.5rem; font-size: 0.95rem; }
+      .tp-start { font-size: 1.35rem !important; min-height: 3.1rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
     }
   </style>
 </head>
-<body>
+<body class="on-intro">
   <div class="wrap">
     <header class="masthead">
       <div class="mast-row">
@@ -250,18 +280,22 @@
     </header>
     <main class="card">
       <section id="s-intro" class="screen active" aria-labelledby="intro-title">
-        <div class="intro">
-          <p class="scope">Nazi Germany · Stalin’s Soviet Union · Fascist Italy<span>1930–1938</span></p>
-          <h1 id="intro-title" tabindex="-1">Look at the source, then test the claim</h1>
-          <p class="purpose">In the years before the Second World War, all three regimes worked to control what their citizens were told and how they were expected to think. This resource uses real, catalogued sources from the period to practise one skill: <b>noticing when a source is being used to prove more than it can</b>.</p>
-          <ol class="rules">
-            <li><span class="n" aria-hidden="true">1</span>Look closely at a historical source and notice what is actually in it.</li>
-            <li><span class="n" aria-hidden="true">2</span>Read a claim that someone has made from that source.</li>
-            <li><span class="n" aria-hidden="true">3</span>Choose the statement the source can fairly support, even if another sounds more convincing.</li>
+        <div class="title-page">
+          <div class="tp-head">
+            <p class="tp-kicker">Nazi Germany · Stalin’s Soviet Union · Fascist Italy</p>
+            <p class="tp-years">1930–1938</p>
+            <h1 id="intro-title" tabindex="-1">Can this source prove it?</h1>
+            <p class="tp-sub">Interactive History Learning Resource</p>
+          </div>
+          <h2 class="tp-ins">Explicit Instructions</h2>
+          <ol class="tp-steps">
+            <li><span class="n" aria-hidden="true">1</span><span><b>Look at the source carefully.</b> Each card begins with a real photograph, poster or speech from the 1930s, and its details matter more than the first impression it gives.</span></li>
+            <li><span class="n" aria-hidden="true">2</span><span><b>Read the claim and the three statements.</b> Someone has used the source to make a claim, and your task is to choose the statement that the source can actually support.</span></li>
+            <li><span class="n" aria-hidden="true">3</span><span><b>A wrong choice is crossed out.</b> You can simply try again, because there are no points, no timer and no penalty.</span></li>
+            <li><span class="n" aria-hidden="true">4</span><span><b>Read the explanation.</b> It shows how a source like this can mislead, and you may open “What historians add” for further context.</span></li>
+            <li><span class="n" aria-hidden="true">5</span><span><b>There are ten cards in three groups.</b> Four come from Nazi Germany, three from the Soviet Union and three from Fascist Italy.</span></li>
           </ol>
-          <p class="question">What can this evidence actually prove?</p>
-          <p class="groups">There are ten cards: four from Nazi Germany, three from the Soviet Union and three from Fascist Italy.</p>
-          <button class="primary" type="button" id="start">Start</button>
+          <button class="primary tp-start" type="button" id="start">Start</button>
           <button class="secondary" type="button" id="teachers">For teachers: sources and credits</button>
         </div>
       </section>
@@ -816,6 +850,7 @@
 
   function show(id) {
     document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("active", s.id === id));
+    document.body.classList.toggle("on-intro", id === "s-intro");
     const h = document.querySelector("#" + id + " h1, #" + id + " h2");
     if (h) h.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -983,4 +1018,3 @@
   </script>
 </body>
 </html>
-
